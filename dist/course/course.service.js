@@ -10,22 +10,50 @@ exports.CourseService = void 0;
 const common_1 = require("@nestjs/common");
 let CourseService = class CourseService {
     getAllCourse() {
-        return 'Get all course -from service';
+        return {
+            message: "All courses fetech sucessfully",
+            data: [],
+        };
     }
     getCourseById(id) {
-        return 'Get course with ID: $(id) -from service';
+        return {
+            message: "Coure feteched sucessfully",
+            id,
+        };
     }
-    createCourse() {
-        return 'create course -from service';
+    createCourse(dto) {
+        return {
+            message: "Course created sucessfully",
+            data: dto,
+        };
     }
-    updateCourse(id) {
-        return 'Update coruse ${id} -from service';
+    updateCourse(id, dto) {
+        return {
+            message: "Course updated sucessfully",
+            id,
+            data: dto,
+        };
     }
-    patchCourse(id) {
-        return 'Patch Course ${id} -from service';
+    patchCourse(id, dto) {
+        return {
+            message: "Course Update sucessfully",
+            id,
+            updatedFields: Object.keys(dto),
+        };
     }
     deleteCourse(id) {
-        return 'Delete Course ${id} -from service';
+        return {
+            messsage: "Course deleted sucessfully",
+            id,
+        };
+    }
+    uploadCourseMaterial(id, file) {
+        return {
+            message: "Materail Uploaded sucessfully",
+            courseId: id,
+            filename: file.filename,
+            path: file.path,
+        };
     }
 };
 exports.CourseService = CourseService;
