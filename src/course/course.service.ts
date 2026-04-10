@@ -7,7 +7,7 @@ export class CourseService {
         return 'Get all course -from service';
     }
     getCourseById(id:string): string{
-        return 'Get course with ID: ${id} -from service';
+        return 'Get course with ID: $(id) -from service';
     }
     createCourse():string{
         return 'create course -from service';
