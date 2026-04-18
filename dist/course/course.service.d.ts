@@ -30,7 +30,7 @@ export declare class CourseService {
     uploadCourseMaterial(id: string, file: Express.Multer.File): {
         message: string;
         courseId: string;
-        filename: string;
-        path: string;
+        filename: any;
+        path: any;
     };
 }

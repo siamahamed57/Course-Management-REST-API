@@ -1,54 +1,53 @@
 import { Injectable } from '@nestjs/common';
-import { CourseController } from './course.controller';
 import { CreateCourseDto } from './dto/create-course.dto';
 import { UpdateCourseDto } from './dto/update-course.dto';
 
 @Injectable()
 export class CourseService {
-    getAllCourse(){
+    getAllCourse() {
         return {
-            message:"All courses fetech sucessfully",
-            data:[],
+            message: "All courses fetech sucessfully",
+            data: [],
         };
     }
-    getCourseById(id:string){
-        return{
-            message:"Coure feteched sucessfully",
+    getCourseById(id: string) {
+        return {
+            message: "Coure feteched sucessfully",
             id,
         };
     }
-    createCourse(dto:CreateCourseDto){
-       return {
-        message:"Course created sucessfully",
-        data: dto,
-       };
-    }
-    updateCourse(id:string,dto:UpdateCourseDto){
-        return{
-            message:"Course updated sucessfully",
-            id,
-            data:dto,
+    createCourse(dto: CreateCourseDto) {
+        return {
+            message: "Course created sucessfully",
+            data: dto,
         };
     }
-    patchCourse(id:string,dto:UpdateCourseDto){
-        return{
-            message:"Course Update sucessfully",
+    updateCourse(id: string, dto: UpdateCourseDto) {
+        return {
+            message: "Course updated sucessfully",
             id,
-            updatedFields:Object.keys(dto),
+            data: dto,
         };
     }
-    deleteCourse(id:string){
-       return{
-        messsage:"Course deleted sucessfully",
-        id,
-       };
+    patchCourse(id: string, dto: UpdateCourseDto) {
+        return {
+            message: "Course Update sucessfully",
+            id,
+            updatedFields: Object.keys(dto),
+        };
     }
-    uploadCourseMaterial(id:string,file:Express.Multer.File){
-        return{
-            message:"Materail Uploaded sucessfully",
-            courseId:id,
-            filename:file.filename,
-            path:file.path,
+    deleteCourse(id: string) {
+        return {
+            messsage: "Course deleted sucessfully",
+            id,
+        };
+    }
+    uploadCourseMaterial(id: string, file: Express.Multer.File) {
+        return {
+            message: "Materail Uploaded sucessfully",
+            courseId: id,
+            filename: file.filename,
+            path: file.path,
         };
     }
 }
